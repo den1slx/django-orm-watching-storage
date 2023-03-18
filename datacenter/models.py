@@ -31,9 +31,28 @@ class Visit(models.Model):
         )
 
 
+def time_to_seconds(h=0, m=0, s=0):
+    h = int(h) * 3600
+    m = int(m) * 60
+    s = int(s)
+    seconds = h + m + s
+    return seconds
+
+
+def is_long_visit(visit, m=0, h=0):
+    if not visit.leaved_at:
+        return get_duration(visit) >= time_to_seconds(10)
+    delta = visit.leaved_at - visit.entered_at
+    delta = delta.total_seconds()
+    return delta >= time_to_seconds(m=m, h=h)
+
+
 def get_duration(visit):
-    time = timezone.localtime()
-    delta = time - visit.entered_at
+    if not visit.leaved_at:
+        time = timezone.localtime()
+        delta = time - visit.entered_at
+        return delta.total_seconds()
+    delta = visit.leaved_at - visit.entered_at
     return delta.total_seconds()
 
 
@@ -44,4 +63,4 @@ def format_duration(duration):
         h = f'0{h}'
     if m < 10:
         m = f'0{m}'
-    return f'{h}:{m}'
+    return h, m
