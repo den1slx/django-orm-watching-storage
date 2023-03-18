@@ -11,7 +11,7 @@ def storage_information_view(request):
     non_closed_visits = []
     visits = Visit.objects.filter(leaved_at=None)
     for visit in visits:
-        h , m = format_duration(get_duration(visit))
+        h, m = format_duration(get_duration(visit))
         visit_info = {}
         visit_info['who_entered'] = visit.passcard
         visit_info['entered_at'] = visit.entered_at
