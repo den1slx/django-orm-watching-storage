@@ -20,16 +20,6 @@ def passcard_info_view(request, passcode):
         visit_info['is_strange'] = is_long_visit(visit, h=1)
         this_passcard_visits.append(visit_info)
 
-    # Программируем здесь
-
-
-    # this_passcard_visits = [
-    #     {
-    #         'entered_at': '11-04-2018',
-    #         'duration': '25:03',
-    #         'is_strange': False
-    #     },
-    # ]
     context = {
         'passcard': passcard,
         'this_passcard_visits': this_passcard_visits
