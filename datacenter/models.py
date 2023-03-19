@@ -40,10 +40,7 @@ def time_to_seconds(h=0, m=0, s=0):
 
 
 def is_long_visit(visit, m=0, h=0):
-    if not visit.leaved_at:
-        return get_duration(visit) >= (time_to_seconds(m) + time_to_seconds(h))
-    delta = visit.leaved_at - visit.entered_at
-    delta = delta.total_seconds()
+    delta = get_duration(visit)
     return delta >= time_to_seconds(m=m, h=h)
 
 
