@@ -11,6 +11,16 @@ Python3 должен быть уже установлен.
 pip install -r requirements.txt
 ```
 
+Должен быть создан `.env` файл содержащий переменные:
+* SECRET_KEY=''
+* ENGINE=''
+* HOST=''
+* PORT='' - int
+* NAME=''
+* USER=''
+* PASSWORD=''
+* DEBUG='' - bool
+
 ### Использование
 Запускаем и переходим по ссылке
 ```commandline
