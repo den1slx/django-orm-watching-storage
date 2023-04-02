@@ -14,7 +14,7 @@ pip install -r requirements.txt
 ### Использование
 Запускаем и переходим по ссылке
 ```commandline
-python main.py
+python manage.py runserver 127.0.0.1:8000
 ```
 'Starting development server at (тут ссылка)'
 
