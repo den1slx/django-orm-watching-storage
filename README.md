@@ -12,7 +12,7 @@ pip install -r requirements.txt
 ```
 
 Должен быть создан `.env` файл содержащий переменные:
-* SECRET_KEY=''
+* SECRET_KEY='' - если не задан используется default значение
 * DB_ENGINE=''
 * DB_HOST=''
 * DB_PORT='' - int
@@ -20,6 +20,7 @@ pip install -r requirements.txt
 * DB_USER=''
 * DB_PASSWORD=''
 * DEBUG='' - bool
+* ALLOWED_HOSTS='' - если не задан используется default значение
 
 ### Использование
 Запускаем и переходим по ссылке
