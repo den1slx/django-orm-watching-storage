@@ -4,12 +4,12 @@ from environs import Env
 
 env = Env()
 env.read_env()
-engine = env('ENGINE')
-host = env('HOST')
-port = env.int('PORT')
-name = env('NAME')
-user = env('USER')
-password = env('PASSWORD')
+engine = env('DB_ENGINE')
+host = env('DB_HOST')
+port = env.int('DB_PORT')
+name = env('DB_NAME')
+user = env('DB_USER')
+password = env('DB_PASSWORD')
 
 
 DATABASES = {

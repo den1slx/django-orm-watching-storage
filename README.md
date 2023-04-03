@@ -13,12 +13,12 @@ pip install -r requirements.txt
 
 Должен быть создан `.env` файл содержащий переменные:
 * SECRET_KEY=''
-* ENGINE=''
-* HOST=''
-* PORT='' - int
-* NAME=''
-* USER=''
-* PASSWORD=''
+* DB_ENGINE=''
+* DB_HOST=''
+* DB_PORT='' - int
+* DB_NAME=''
+* DB_USER=''
+* DB_PASSWORD=''
 * DEBUG='' - bool
 
 ### Использование
